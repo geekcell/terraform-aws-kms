@@ -1,10 +1,13 @@
 .DEFAULT_GOAL = help
 
+TEMPLATE_REPO := https://github.com/geekcell/template-terraform-module.git
+UPDATABLE_TEMPLATE_FILES := .github/ docs/logo.md .editorconfig .gitignore .pref-commit-config.yaml .terraform-docs.yml .tflint.hcl LICENSE Makefile
+
 #########
 # SETUP #
 #########
-.PHONY: setup
-setup: setup/install-tools pre-commit/install-hooks ## Install and setup necessary tools
+.PHONY: setup/run
+setup/run: setup/install-tools pre-commit/install-hooks ## Install and setup necessary tools
 
 .PHONY: setup/install-tools
 setup/install-tools:	# Install required tools
@@ -14,11 +17,18 @@ else
 	@brew install pre-commit terraform terraform-docs tflint
 endif
 
+.PHONY: setup/update-template
+setup/update-template: ## Pull the latest template files from the main repo
+	@git config remote.terraform-module-template.url >&- || git remote add terraform-module-template $(TEMPLATE_REPO)
+	@git fetch terraform-module-template main
+	@git checkout -p terraform-module-template/main $(UPDATABLE_TEMPLATE_FILES)
+
 ##############
 # PRE-COMMIT #
 ##############
 .PHONY: pre-commit/install-hooks
 pre-commit/install-hooks:	## Install pre-commit git hooks script
+	@git init
 	@pre-commit install
 
 .PHONY: pre-commit/run-all
