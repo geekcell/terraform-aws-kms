@@ -31,7 +31,7 @@ variable "description" {
 
 variable "enable_key_rotation" {
   description = "Specifies whether key rotation is enabled."
-  default     = false
+  default     = true
   type        = bool
 }
 
