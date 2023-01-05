@@ -1,25 +1,25 @@
-## Naming
+# Context
 variable "tags" {
   description = "Tags to add to the AWS Customer Managed Key."
   default     = {}
   type        = map(any)
 }
 
-## KMS
+# AWS KMS
 variable "alias" {
   description = "The display name of the alias."
   type        = string
 }
 
 variable "customer_master_key_spec" {
-  default     = "SYMMETRIC_DEFAULT"
   description = "Specifies whether the key contains a symmetric key or an asymmetric key pair and the encryption algorithms or signing algorithms that the key supports."
+  default     = "SYMMETRIC_DEFAULT"
   type        = string
 }
 
 variable "deletion_window_in_days" {
-  default     = 30
   description = "The waiting period, specified in number of days."
+  default     = 30
   type        = number
 }
 
