@@ -76,10 +76,10 @@ that should make sense for most use cases.
 # Examples
 ### Full
 ```hcl
-module "full" {
+module "basic-example" {
   source = "../../"
 
-  alias = "application-rds"
+  alias = var.name
 }
 ```
 <!-- END_TF_DOCS -->
