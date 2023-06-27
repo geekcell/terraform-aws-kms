@@ -1,5 +1,5 @@
 <!-- BEGIN_TF_DOCS -->
-[![Geek Cell GmbH](https://raw.githubusercontent.com/geekcell/template-terraform-module/main/docs/assets/logo.svg)](https://www.geekcell.io/)
+[![Geek Cell GmbH](https://raw.githubusercontent.com/geekcell/.github/main/geekcell-github-banner.png)](https://www.geekcell.io/)
 
 ### Code Quality
 [![License](https://img.shields.io/github/license/geekcell/terraform-aws-kms)](https://github.com/geekcell/terraform-aws-kms/blob/master/LICENSE)
@@ -66,7 +66,7 @@ that should make sense for most use cases.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.36 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.36, < 5.0 |
 
 ## Resources
 
