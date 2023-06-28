@@ -66,7 +66,7 @@ that should make sense for most use cases.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.36, < 5.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.36 |
 
 ## Resources
 
